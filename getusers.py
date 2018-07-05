@@ -88,6 +88,7 @@ def get_data(users):
 
 def get_latlon(location):
     """Geocode location"""
+    location = str(location).split('&#x2F;')[0]
     url = "https://nominatim.openstreetmap.org/search/?q={0}&format=json&limit=1".format(location)
     debug("In get_latlon: {0}".format(url))
     response = None
